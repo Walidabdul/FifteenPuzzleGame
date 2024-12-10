@@ -36,6 +36,99 @@ body {
     margin-top: 20px;
 }
 
+/* Puzzle Board */
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 2px;
+    background-color: #333;
+    width: 408px; /* 400px tiles + 2px gaps * 4 columns */
+    height: 408px; /* 400px tiles + 2px gaps * 4 rows */
+    margin: 0 auto;
+}
+
+/* Puzzle Tile */
+.puzzle-tile {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32pt;
+    cursor: default;
+    background-size: 400px 400px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.puzzle-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.movable-piece {
+    border-color: red;
+    color: #006600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#shuffle-btn, #solve-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+/* Winning Notification */
+#win-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 255, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    animation: popup 0.5s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Rules Section */
+#rules-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: left;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#rules-section h2 {
+    text-align: center;
+    color: #4caf50;
+}
+
+#rules-section ul {
+    list-style-type: disc;
+    margin: 10px 0 10px 20px;
+    padding: 0;
+}
+
+#rules-section li {
+    margin: 5px 0;
+}
+
+#rules-section p {
+    line-height: 1.5;
+    font-size: 1.1em;
+}
 
 /* Validators */
 #validators {
